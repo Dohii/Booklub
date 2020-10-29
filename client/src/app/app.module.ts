@@ -10,6 +10,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { SlideAdminPanelComponent } from './slide-admin-panel/slide-admin-panel.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     SideBarComponent,
     SlideAdminPanelComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

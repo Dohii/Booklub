@@ -2590,6 +2590,9 @@ video {
 
 .booklub-featured-img {
   margin-bottom: 60px;
+  width: 50%;
+  float: left;
+  margin-right: 60px;
 }
 
 .booklub-featured-img img {
