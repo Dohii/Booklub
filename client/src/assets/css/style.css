@@ -46,7 +46,7 @@ MEDIA QUERIES
 .cart {
   position: fixed;
   width: 50%;
-  height: 100px;
+  height: 300px;
   z-index: 999999;
   background-color: #d4d4d4;
   bottom: 0;

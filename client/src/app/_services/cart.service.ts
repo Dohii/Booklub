@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  items = [];
-constructor() { }
-addToCart(product) {
-  this.items.push(product);
-}
+  itemsShow = [];
 
-getItems() {
-  return this.items;
-}
+  constructor() {}
+  addToCart(product) {
+    var items = JSON.parse(localStorage.getItem('cart')) || [];
+    var newItems = product;
+    items.push(newItems);
+    this.itemsShow.push(product);
+    localStorage.setItem('cart', JSON.stringify(items));
+  }
 
-clearCart() {
-  this.items = [];
-  return this.items;
-}
+  getItems() {
+    return this.itemsShow;
+  }
+
+  clearCart() {
+    this.itemsShow = [];
+    localStorage.removeItem('cart');
+    return this.itemsShow;
+  }
 }
