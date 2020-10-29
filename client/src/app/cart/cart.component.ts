@@ -9,23 +9,22 @@ import { CartService } from '../_services/cart.service';
 })
 export class CartComponent implements OnInit {
   items;
-  itemss;
-  isFull = true;
 
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit() {
     this.items = this.cartService.getItems();
-    this.itemss = JSON.parse(localStorage.getItem('cart')) || [];
-    if (this.items.length == 0) {
-      this.isFull = false;
-    }
-    console.log(this.isFull);
   }
 
   clearCart() {
     this.cartService.clearCart();
     this.items = [];
-    this.itemss = [];
+  }
+  removeFromCart(idToRemove) {
+    var itemArray = JSON.parse(localStorage.getItem('cart')) || [];
+    var updatedArray = itemArray.filter((item) => item.id !== idToRemove);
+    localStorage.removeItem('cart');
+    localStorage.setItem('cart', JSON.stringify(updatedArray));
+    location.reload();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-book-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
+  cartItemQuantity;
+  constructor(private cartService:CartService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.cartItemQuantity = this.cartService.getItemsTotal();
+  }
+  updateCartNumber() {
+    this.cartItemQuantity = this.cartService.getItemsTotal();
   }
 
 }

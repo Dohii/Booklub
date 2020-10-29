@@ -16,7 +16,12 @@ export class CartService {
   }
 
   getItems() {
-    return this.itemsShow;
+    var items = JSON.parse(localStorage.getItem('cart')) || [];
+    return items;
+  }
+  getItemsTotal() {
+    var items = JSON.parse(localStorage.getItem('cart')) || [];
+    return items.length;
   }
 
   clearCart() {

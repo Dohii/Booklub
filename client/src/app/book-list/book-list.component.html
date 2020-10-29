@@ -1,4 +1,4 @@
-<app-cart></app-cart>    
+
     <!-- READING POSITION INDICATOR -->
     <progress value="0" id="booklub-progress-bar">
       <span class="booklub-progress-container">
@@ -19,13 +19,17 @@
                   <li id="booklub-search-icon">
                       <a id="booklub-open-search" href="#"><i class="fa fa-search"></i></a>
                   </li>
+                  <li id="booklub-cart-icon">
+                    <span class="number-of-items" >{{cartItemQuantity}}</span>
+                    <a id="booklub-open-cart" href="/cart"><i class="fa fa-cart-plus"></i></a>
+                </li>
               </ul>
               <div class="clearfix"></div>
             
               <!-- BLOG POSTS -->
               <div class="booklub-masonry-grid">
                   <div class="booklub-two-columns"data-columns>
-                      <app-book-card></app-book-card>
+                      <app-book-card (click)="updateCartNumber()"></app-book-card>
                   </div>
               </div>
 
