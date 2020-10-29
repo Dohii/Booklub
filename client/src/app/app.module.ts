@@ -11,23 +11,30 @@ import { SlideAdminPanelComponent } from './slide-admin-panel/slide-admin-panel.
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { CartService } from './_services/cart.service';
+import { BookCardComponent } from './book-card/book-card.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
     HomeComponent,
     SideBarComponent,
     SlideAdminPanelComponent,
     RegisterComponent,
     LoginComponent,
-    BookDetailComponent
-  ],
+    BookDetailComponent,
+      BookListComponent,
+      BookCardComponent,
+      CartComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

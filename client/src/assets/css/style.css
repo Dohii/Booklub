@@ -43,7 +43,22 @@ MEDIA QUERIES
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Merriweather:400,400i,700,700i&subset=latin-ext");
 
 /* ================= GENERAL STYLES ================== */
-
+.cart {
+  position: fixed;
+  width: 50%;
+  height: 100px;
+  z-index: 999999;
+  background-color: #d4d4d4;
+  bottom: 0;
+  right: 120px;
+}
+.add-to-cart {
+  cursor: pointer;
+  float: right;
+  font-size: 26px;
+  margin-top: -17px;
+  margin-right: -8px;
+}
 *,
 *::after,
 *::before {

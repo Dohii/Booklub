@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListComponent } from './book-list/book-list.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -20,6 +21,10 @@ export const appRoutes: Routes = [
       {
         path: 'register',
         component: RegisterComponent,
+      },
+      {
+        path: 'books',
+        component: BookListComponent,
       },
       {
         path: 'books/:id',
